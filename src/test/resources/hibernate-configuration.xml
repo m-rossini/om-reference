@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+ "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+    <session-factory>
+
+        <property name="show_sql">false</property>
+        <property name="use_outer_join">true</property>
+	    <property name="hbm2ddl.auto">create</property>
+        
+        <!--
+        <property name="connection.driver_class">org.postgresql.Driver</property>
+        <property name="connection.url">jdbc:postgresql://jean:5432/testdb</property>
+        <property name="connection.username">test</property>
+        <property name="connection.password">test</property>
+
+        <property name="dialect">net.sf.hibernate.dialect.PostgreSQLDialect</property>
+        -->        
+
+        <property name="connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+        <property name="connection.url">jdbc:oracle:thin:@tiamat:1521:TEST01</property>
+        <property name="connection.username">test</property>
+        <property name="connection.password">test</property>
+        
+        <property name="dialect">org.hibernate.dialect.Oracle9Dialect</property>
+
+        <mapping resource="br/com/auster/om/reference/ImportRecord.hbm.xml"/>
+		<mapping resource="br/com/auster/om/reference/model/CarrierCompany.hbm.xml"/>
+        <mapping resource="br/com/auster/om/reference/model/CarrierAddress.hbm.xml"/>
+        <mapping resource="br/com/auster/om/reference/model/FiscalOpCode.hbm.xml"/>
+	
+    </session-factory>
+
+</hibernate-configuration>
